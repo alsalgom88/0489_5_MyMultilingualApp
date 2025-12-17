@@ -1,32 +1,67 @@
 # 🌍 My Multilingual App
 
-Aplicació Android multillenguatge desenvolupada en **Kotlin** amb **Android Studio Narwhal 3 Feature Drop | 2025.1.3**.
-Forma part del mòdul **DAM0489 – Programació multimèdia i dispositius mòbils**.
+**Activitat 5 – Internacionalització d’una app Android**
 
-## 🚀 Funcionalitats
+Aplicació Android multillenguatge desenvolupada en **Kotlin** amb **Android Studio**.
+Forma part del mòdul **DAM0489 – Programació multimèdia i aplicacions mòbils**.
 
-* Interfície senzilla amb **ConstraintLayout**.
-* Suport complet per a **traduccions** (ca, es, en).
-* Mostra un **Toast** amb missatge multillenguatge.
-* Estils amb **Material Design 3 (M3)**.
-* Temes **Day/Night** amb colors diferenciats.
-* Botó per **tancar l’aplicació**.
+L’objectiu del projecte és aprendre a **internacionalitzar una aplicació Android**, separant correctament la lògica del codi i els recursos textuals, visuals i de disseny, seguint les bones pràctiques oficials d’Android.
 
 ---
 
-## 🛠️ Tecnologies utilitzades
+## 🎯 Objectius del projecte
 
-* **Kotlin**
-* **Android Studio 2025.1.3**
-* **Material Design 3**
-* **ConstraintLayout**
-* Fitxers de recursos XML:
+L’alumne ha d’aprendre a:
 
-  * `strings.xml`
-  * `styles.xml`
-  * `colors.xml`
-  * `themes.xml`
-  * `dimens.xml`
+* Crear una aplicació Android multillenguatge
+* Utilitzar **strings.xml** per gestionar textos
+* Aplicar **Material Design 3**
+* Treballar amb **ConstraintLayout**
+* Implementar **tema Day/Night**
+* Validar idiomes i mides de pantalla amb **Layout Validation**
+
+---
+
+## 🧠 Conceptes clau treballats (Teoria)
+
+### 🌐 Internacionalització (i18n)
+
+Android permet adaptar una app a diferents idiomes mitjançant **directoris de recursos**:
+
+* `values/` → idioma per defecte
+* `values-es/` → castellà
+* `values-en/` → anglès
+* `values-ca/` → català (opcional)
+
+📌 Android selecciona automàticament l’idioma segons la configuració del dispositiu.
+
+❗ **Mai** s’han d’escriure textos literals al codi ni als layouts.
+
+---
+
+### 🌓 Day / Night Theme
+
+S’utilitza **Theme.Material3.DayNight**, que permet canviar colors i estils automàticament segons:
+
+* tema clar
+* tema fosc del sistema
+
+Això es gestiona amb:
+
+* `values/colors.xml`
+* `values-night/colors.xml`
+
+---
+
+### 📐 ConstraintLayout
+
+ConstraintLayout permet:
+
+* dissenys flexibles
+* adaptació a múltiples pantalles
+* millor rendiment
+
+És el layout recomanat per Android.
 
 ---
 
@@ -36,218 +71,104 @@ Forma part del mòdul **DAM0489 – Programació multimèdia i dispositius mòbi
 app/
 └── src/
     └── main/
-         ├── java/com/example/mymultilingualapp/MainActivity.kt
-         ├── res/
-         │     ├── layout/activity_main.xml
-         │     ├── values/strings.xml
-         │     ├── values-es/strings.xml
-         │     ├── values-en/strings.xml
-         │     ├── values-ca/strings.xml
-         │     ├── values/colors.xml
-         │     ├── values-night/colors.xml
-         │     ├── values/dimens.xml
-         │     ├── values/styles.xml
-         │     └── values/themes.xml
+        ├── AndroidManifest.xml
+        │
+        ├── java/com/example/mymultilingualapp/
+        │   └── MainActivity.kt
+        │
+        ├── res/
+        │   ├── layout/
+        │   │   └── activity_main.xml
+        │   │
+        │   ├── values/
+        │   │   ├── strings.xml
+        │   │   ├── colors.xml
+        │   │   ├── dimens.xml
+        │   │   ├── styles.xml
+        │   │   └── themes.xml
+        │   │
+        │   ├── values-es/
+        │   │   └── strings.xml
+        │   │
+        │   ├── values-en/
+        │   │   └── strings.xml
+        │   │
+        │   ├── values-night/
+        │   │   ├── colors.xml
+        │   │   └── themes.xml
+        │   │
+        │   └── drawable/
 ```
 
 ---
 
-## 📱 Pantalla principal
+## 🧩 Explicació del projecte
 
-L’aplicació conté:
+L’aplicació disposa d’una **pantalla principal** amb:
 
-* Un **TextView** amb el títol (multillenguatge).
-* Un botó **Informació** → mostra un Toast.
-* Un botó **Sortir** → tanca l’activitat.
+* Un **TextView** amb text multillenguatge
+* Un botó **Informació** que mostra un Toast traduït
+* Un botó **Sortir** que tanca l’app
 
----
-
-## 👨‍💻 Codi principal (MainActivity.kt)
-
-```kotlin
-class MainActivity : AppCompatActivity() {
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-
-        val txtTitle = findViewById<TextView>(R.id.txtTitle)
-        val btnInfo = findViewById<Button>(R.id.btnInfo)
-        val btnExit = findViewById<Button>(R.id.btnExit)
-
-        btnInfo.setOnClickListener {
-            Toast.makeText(
-                this,
-                getString(R.string.hello_message),
-                Toast.LENGTH_SHORT
-            ).show()
-        }
-
-        btnExit.setOnClickListener {
-            finish()
-        }
-    }
-}
-```
+Tots els textos s’obtenen mitjançant `getString()` des de `strings.xml`.
 
 ---
 
-## 🎨 Disseny XML (activity_main.xml)
+## 🛠️ Què ha de fer l’alumne (Pràctica obligatòria)
 
-Inclou estils de Material 3 i marges definits a **dimens.xml**.
+L’alumne ha de:
 
-```xml
-<androidx.constraintlayout.widget.ConstraintLayout ...>
+1. Crear una app Android amb **Kotlin**
+2. Utilitzar **ConstraintLayout**
+3. Definir **mínim 3 idiomes**
+4. Centralitzar tots els textos a `strings.xml`
+5. Mostrar un **Toast multillenguatge**
+6. Aplicar **Material Design 3**
+7. Implementar **Day/Night Theme**
+8. Validar el disseny amb **Layout Validation**
+9. Pujar el projecte a **GitHub**
 
-    <TextView
-        style="@style/TitleText"
-        android:id="@+id/txtTitle"
-        android:text="@string/hello_message"
-        ... />
-
-    <Button
-        android:id="@+id/btnInfo"
-        style="@style/AppButton"
-        android:text="@string/btn_info"
-        ... />
-
-    <Button
-        android:id="@+id/btnExit"
-        style="@style/AppButton"
-        android:text="@string/btn_exit"
-        ... />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
-```
+📌 **Qualsevol text literal invalida l’activitat**
 
 ---
 
-## 🌓 Mode Day/Night
+## ⭐ Pràctica extra (Ampliació – Punt extra)
 
-L’app utilitza el parent:
+L’alumne pot ampliar el projecte amb **UNA o més** opcions:
 
-```
-Theme.Material3.DayNight.NoActionBar
-```
+### 🔹 Opció A — Idioma manual
 
-Això permet que Android seleccioni automàticament els colors segons:
+Permetre canviar l’idioma des de l’app amb botons o Spinner.
 
-* **Tema clar** → `values/colors.xml`
-* **Tema fosc** → `values-night/colors.xml`
+### 🔹 Opció B — Nous idiomes
 
-### Exemple de colors
+Afegir un quart idioma i adaptar el disseny.
 
-#### ☀️ values/colors.xml
+### 🔹 Opció C — Plurals
 
-```xml
-<color name="md_theme_primary">#00629B</color>
-```
+Utilitzar `plurals.xml` per gestionar quantitats.
 
-#### 🌙 values-night/colors.xml
+### 🔹 Opció D — Accessibilitat
 
-```xml
-<color name="md_theme_primary">#90CAF9</color>
-```
+Millorar contrast, mida de text i `contentDescription`.
 
-### ✔ Com revisar el tema Night al Layout Editor
+### 🔹 Opció E — Segona pantalla
 
-1. Obre `activity_main.xml`
-2. A la barra superior del Preview, fes clic a **Light / Dark**
-3. Pots validar instantàniament com es veu cada tema
+Crear una segona Activity també multillenguatge.
 
 ---
 
-## 🌐 Strings multillenguatge
+## ✅ Avaluació
 
-### Català (`values-ca/strings.xml`)
+Es valorarà:
 
-```xml
-<string name="btn_info">Informació</string>
-<string name="btn_exit">Sortir</string>
-```
-
-### Castellà (`values-es/strings.xml`)
-
-```xml
-<string name="btn_info">Información</string>
-<string name="btn_exit">Salir</string>
-```
-
-### Anglès (`values-en/strings.xml`)
-
-```xml
-<string name="btn_info">Info</string>
-<string name="btn_exit">Exit</string>
-```
+* ús correcte de recursos
+* estructura del projecte
+* absència de textos literals
+* validació en diferents idiomes
+* qualitat del codi
+* implementació de pràctica extra
 
 ---
 
-## 🧪 Layout Validation
-
-Android Studio inclou una eina molt potent: **Layout Validation**, que permet revisar:
-
-### ✔ Idiomes
-
-Com es veu l’app en **català, castellà i anglès** en paral·lel.
-
-### ✔ Mides de pantalla
-
-* Mòbil petit
-* Mòbil mitjà
-* Tablet
-* Dispositiu plegable
-* Pantalla de sobretaula (Desktop Mode)
-
-Això és essencial en el mòdul DAM0489, ja que l’alumnat ha d’aprendre a validar accessibilitat, responsivitat i localització.
-
----
-
-## 🖼️ Captures de pantalla
-
-### 1️⃣ Resultat final al simulador
-
-<img src="img/Captura1.png" width="400"/>
-
----
-
-### 2️⃣ Layout Validation – Idiomes
-
-<img src="img/Captura2.png" width="900"/>
-
----
-
-### 3️⃣ Layout Validation – Mides de pantalla
-
-<img src="img/Captura3.png" width="900"/>
-
----
-
-## 🎭 Temes (themes.xml)
-
-```xml
-<style name="Theme.MyMultilangApp" parent="Theme.Material3.DayNight.NoActionBar">
-    <item name="colorPrimary">@color/md_theme_primary</item>
-    <item name="colorSecondary">@color/md_theme_secondary</item>
-</style>
-```
-
----
-
-## ▶️ Com executar l’app
-
-1. Clona el repositori:
-
-```bash
-git clone https://github.com/alsalgom88/GS_DAM_0489/tree/main/Tema1FonamentsDesenvolupamentMobil/Activitats/MyMultilingualApp
-```
-
-2. Obre’l amb **Android Studio 2025.1.3**
-3. Executa’l en un emulador o dispositiu físic
-
----
-
-## 📝 Llicència
-
-MIT License.
-
----
+🧠 *“One app. Many languages. Zero excuses.”* 🌍📱
