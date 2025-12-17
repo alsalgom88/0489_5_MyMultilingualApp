@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!--
+        Tema principal de l'aplicació.
+        Utilitza Theme.Material3.DayNight.NoActionBar, que permet
+        que el dispositiu canviï automàticament entre mode clar i fosc.
+
+        Aquest tema utilitza els colors definits a:
+        - colorPrimary → md_theme_primary
+        - colorSecondary → md_theme_secondary
+    -->
+    <style name="Theme.MyMultilangApp" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/md_theme_primary</item>
+        <item name="colorSecondary">@color/md_theme_secondary</item>
+    </style>
+
+    <!--
+        Segon tema alternatiu (opcional).
+        Aquest NO és automàticament Day/Night: sempre és mode clar
+        perquè hereta de Theme.Material3.Light.NoActionBar.
+
+        Els colors utilitzats són:
+        - primaryColor
+        - secondaryColor
+        definits al fitxer colors.xml.
+    -->
+    <style name="Theme.MyMultilingualApp" parent="Theme.Material3.Light.NoActionBar">
+        <item name="colorPrimary">@color/primaryColor</item>
+        <item name="colorSecondary">@color/secondaryColor</item>
+    </style>
+
+</resources>

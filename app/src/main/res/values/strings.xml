@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name" translatable="false">La meva app multilingüe</string>
+    <string name="hello_message" translatable="false">Hola! Benvingut/da</string>
+    <string name="button_click_me" translatable="false">Clica’m!</string>
+    <string name="btn_info">Informació</string>
+    <string name="btn_exit">Sortir</string>
+    <string name="cd_info_button">Mostra informació</string>
+    <string name="cd_exit_button">Tanca l’aplicació</string>
+</resources>

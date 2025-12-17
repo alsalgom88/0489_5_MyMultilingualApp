@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--
+        Mida d'espaiat mitjà.
+        Es fa servir per marges i padding (p. ex. separación entre botons).
+        16dp és un valor recomanat per Material Design.
+    -->
+    <dimen name="space_m">16dp</dimen>
+
+    <!--
+        Alçada estàndard dels botons de l'aplicació.
+        48dp és la mida mínima recomanada perquè siguin accessibles.
+    -->
+    <dimen name="btn_height">48dp</dimen>
+
+    <!--
+        Mida de text gran utilitzada en títols.
+        Es defineix en sp (scale-independent pixels) perquè
+        respecti la configuració d’accessibilitat del dispositiu.
+    -->
+    <dimen name="text_large">20sp</dimen>
+
+    <!--
+        Amplada màxima per als botons.
+        Evita que es facin massa grans en pantalles amples.
+    -->
+    <dimen name="btn_max_width">320dp</dimen>
+
+</resources>

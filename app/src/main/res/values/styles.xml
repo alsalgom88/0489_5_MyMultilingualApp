@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--
+        Estil personalitzat per als botons de l'aplicació.
+        Hereta del botó estàndard de Material Design 3 (Widget.Material3.Button),
+        i després se li apliquen propietats personalitzades.
+    -->
+    <style name="AppButton" parent="Widget.Material3.Button">
+
+        <!--
+            Defineix l'alçada mínima del botó.
+            El valor s'agafa de dimens.xml (btn_height).
+        -->
+        <item name="android:minHeight">@dimen/btn_height</item>
+
+        <!--
+            Color de fons del botó.
+            S'utilitza el color primari definit al tema (md_theme_primary).
+        -->
+        <item name="android:backgroundTint">@color/md_theme_primary</item>
+
+        <!--
+            Color del text del botó.
+            S'utilitza blanc per garantir contrast i accessibilitat.
+        -->
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+
+    <!--
+        Estil per al TextView del títol.
+        Parteix de TitleLarge de Material Design 3, que ja té
+        una mida gran i tipografia adequada.
+    -->
+    <style name="TitleText" parent="TextAppearance.Material3.TitleLarge">
+
+        <!--
+            Defineix el color del text del títol.
+            Es fa servir el color primari del tema.
+        -->
+        <item name="android:textColor">@color/md_theme_primary</item>
+
+        <!--
+            Estableix el text en negreta.
+        -->
+        <item name="android:textStyle">bold</item>
+    </style>
+
+</resources>

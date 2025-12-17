@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">My multilingual app</string>
+    <string name="hello_message">¡Hi! Welcome/a</string>
+    <string name="button_click_me">¡Click me!</string>
+    <string name="btn_info">Info</string>
+    <string name="btn_exit">Exit</string>
+    <string name="cd_info_button">show info</string>
+    <string name="cd_exit_button">Close app</string>
+</resources>
